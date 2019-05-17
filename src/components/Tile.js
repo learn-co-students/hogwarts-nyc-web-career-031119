@@ -6,7 +6,9 @@ class Tile extends React.Component{
   state = {details: false}
 
   toggleDetails = () => {
-    this.setState({details: true})
+    if (this.state.details === false){
+    this.setState({details: true})}
+    else {this.setState({details: false})}
   }
 
   handleClick = (e) => {
@@ -18,7 +20,7 @@ class Tile extends React.Component{
     console.log(this.state.details)
     const pigName = this.props.hog.name.toLowerCase().split(' ').join('_')
     const hog = this.props.hog
-    
+
     if(this.state.details === false){
       return (
       <div className="ui eight wide column">
@@ -30,7 +32,7 @@ class Tile extends React.Component{
       </div>
     )}
     else if (this.state.details === true) {
-      return  <Details hog={this.props.hog} />
+      return  <Details hog={this.props.hog} toggle={this.toggleDetails}/>
     }
   }
 }

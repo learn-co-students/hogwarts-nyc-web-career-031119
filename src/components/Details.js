@@ -14,7 +14,7 @@ class Details extends React.Component{
 
         return (
 
-          <div className="ui card content pigTile"> <br/>
+          <div className="ui card content pigTile" onClick={this.props.toggle}> <br/>
             <h3 className="ui header"> { hog.name }</h3>
               <ul >
                 <li className="ui sub header"> Specialty: { hog.specialty }</li>
